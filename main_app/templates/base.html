@@ -44,7 +44,7 @@
                 <a class="nav-link" href="{% url 'about' %}">About</a>
               </li>      
 
-              <!-- USER LOGGED IN NAV -->
+              {% comment %} <!-- USER LOGGED IN NAV -->
               {% if user.is_authenticated %}
 
               <!-- PROFILE -->
@@ -68,7 +68,7 @@
                 <a class="nav-link" href="{% url 'login' %}">Log In</a>
               </li>
 
-            {% endif %}  
+            {% endif %}   {% endcomment %}
 
             </ul>
         </div>
