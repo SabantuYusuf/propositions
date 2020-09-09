@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 
 # Add the following import
 from django.http import HttpResponse
@@ -10,9 +10,8 @@ def home(request):
 def about(request):
     return render(request, 'about.html')
 
-def profile(request):
-    return render(request, 'profile.html')
-    # shows if you are going to vote yes/no on each of the propositions
+def start(request):
+    return redirect('proposition', proposition_id=1)
 
 def index(request):
     return render(request, 'index.html')
