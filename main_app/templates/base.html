@@ -17,7 +17,7 @@
   <!-- Bulma CDN for Forms -->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.0/css/bulma.min.css">
   <!-- Main CSS -->
-  {% comment %} <link rel="stylesheet" href="{% static 'styles/style.css' %}"> {% endcomment %}
+  <link rel="stylesheet" href="{% static 'styles/style.css' %}">
   <!-- Main JS -->
   {% comment %} <script src="{% static 'js/app.js' %}"></script> {% endcomment %}
 
@@ -44,7 +44,7 @@
                 <a class="nav-link" href="{% url 'about' %}">About</a>
               </li>      
 
-              <!-- USER LOGGED IN NAV -->
+              {% comment %} <!-- USER LOGGED IN NAV -->
               {% if user.is_authenticated %}
 
               <!-- PROFILE -->
@@ -68,7 +68,7 @@
                 <a class="nav-link" href="{% url 'login' %}">Log In</a>
               </li>
 
-            {% endif %}  
+            {% endif %}   {% endcomment %}
 
             </ul>
         </div>
