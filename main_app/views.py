@@ -1,7 +1,9 @@
 from django.shortcuts import render, redirect
 
+
 # Add the following import
 from django.http import HttpResponse
+from .models import Proposition
 
 # Define the home view
 def home(request):
@@ -11,7 +13,7 @@ def about(request):
     return render(request, 'about.html')
 
 def start(request):
-    return redirect('proposition', proposition_id=1)
+    return redirect('propositions', proposition_id=1)
 
 def index(request):
     return render(request, 'index.html')
