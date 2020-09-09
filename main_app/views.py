@@ -13,7 +13,7 @@ def about(request):
     return render(request, 'about.html')
 
 def start(request):
-    return redirect('propositions', proposition_id=1)
+    return redirect('show', proposition_id=1)
 
 def index(request):
     return render(request, 'index.html')
