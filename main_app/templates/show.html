@@ -3,6 +3,37 @@
 {% block content %}
 {% load static %}
 
-<h1>Proposition</h1>
+<!-- SIDEBAR -->
+<div class="sidebar-container">
+    <ul class="sidebar-ul">
+    <!-- CITY NAMES -->
+    {% for proposition in side_bar_proposition_numbers.all %}  
+        <a href={% url 'show' proposition.id %}>
+            <li class="sidebar-item">
+                <span class="sidebar-text">{{proposition.number}}</span>
+            </li>
+        </a>
+    {% endfor %}
+    </ul>
+</div>
+
+<!-- Prop Info -->
+<div>
+    <h1>Proposition</h1>
+    <h2>{{ proposition.number }}</h2>
+    <h3>{{proposition.whatIs}}</h3>
+    <div>
+        <h3>YES</h3>
+        <p>{{proposition.yes}}</p>
+    </div>
+    <div>
+        <h3>NO</h3>
+        <p>{{proposition.no}}</p>
+    </div>
+
+</div>
+
+
+
 
 {% endblock %}
