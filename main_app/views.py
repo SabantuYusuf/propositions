@@ -14,15 +14,11 @@ def start(request):
     return redirect('show', proposition_id=1)
 
 def index(request):
-    return render(request, 'index.html')
-
-# def index(request):
-#     proposition = Proposition.whatIs.object.all()
-#     context = {
-#         'Proposition': proposition
-#     }
-#     return render(request, 'proposition')
-
+    propositions = Proposition.objects.all().order_by('number')
+    context = {
+        'propositions': propositions
+    }
+    return render(request, 'index.html', context)
 
 
 def show(request, proposition_id):

@@ -26,7 +26,7 @@
     <h1>Proposition</h1>
     <h2>{{ proposition.number }}</h2>
     <h3>{{proposition.whatIs}}</h3>
-    <form action="" method="POST">
+    <form action="{% url 'index' %}" method="POST">
         {% csrf_token %} <!-- csrf token for basic security -->
         <button class="noteAddYes" name="noteAddYes" type="submit">
             <h3>YES</h3>
