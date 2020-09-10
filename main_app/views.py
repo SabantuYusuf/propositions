@@ -1,9 +1,7 @@
 from django.shortcuts import render, redirect
-
-
+from .models import Proposition
 # Add the following import
 from django.http import HttpResponse
-from .models import Proposition
 
 # Define the home view
 def home(request):
@@ -17,6 +15,15 @@ def start(request):
 
 def index(request):
     return render(request, 'index.html')
+
+# def index(request):
+#     proposition = Proposition.whatIs.object.all()
+#     context = {
+#         'Proposition': proposition
+#     }
+#     return render(request, 'proposition')
+
+
 
 def show(request, proposition_id):
     side_bar_proposition_numbers = Proposition.objects.all().order_by('number')
