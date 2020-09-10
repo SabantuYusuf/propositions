@@ -33,11 +33,11 @@ def show(request, proposition_id):
 
         if selected_option == 'yes':
             proposition.yes_count += 1
-            proposition.color = '#FFFF00'
+            proposition.color = '#EBB62B'
             # print(proposition.color)
         elif selected_option == 'no':
             proposition.no_count += 1
-            proposition.color = '#FFFF00'
+            proposition.color = '#EBB62B'
             # print(proposition.color)
         else:
             return HttpResponse(400, 'Invalid Form') 

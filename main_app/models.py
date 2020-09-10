@@ -12,7 +12,7 @@ class Proposition(models.Model):
     no = models.TextField(max_length=1000)
     yes_count = models.IntegerField(default=0)
     no_count = models.IntegerField(default=0)
-    color = ColorField(default='#FF0000')
+    color = ColorField(default='#808080')
 
     def __str__(self):
         return self.number
