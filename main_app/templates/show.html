@@ -3,7 +3,37 @@
 {% block content %}
 {% load static %}
 
-<h1>Proposition X (Show)</h1>
+<img src="../static/images/Logo.png" alt="Miniature Site Logo" class="mini-vote-logo">
+<img src="../static/images/Flag_of_California.png" alt="California Republic Flag" class="cal-flag">
+    <div class="ca-gen-election">
+       <h3>California General Election Tuesday, November 3, 2020 7 AM to 8 PM PST </h3> 
+    </div>
+
+    <div class="props-container">
+      <section class="top-section">
+        <h5 class="prop-text">Proposition</h5>
+             <div class="magic-prop-num">{{ proposition.number }}</div>
+                <span class="prop-info"> {{proposition.whatIs}} </span>
+      </section>
+      <section class="bottom-section">
+        <div id="{{ proposition.number }}">
+         <!--   
+             Commented out for later use        
+            <h1>Proposition</h1>
+            <h2>{{ proposition.number }}</h2> 
+            <h3>{{proposition.whatIs}}</h3>   --> 
+            <button class="yes-button">
+                <h3>YES</h3>
+                <p class="prop-yes">{{proposition.yes}}</p>
+            </button>
+            <button class="no-button">
+                <h3>NO</h3>
+                <p class="prop-no">{{proposition.no}}</p>
+            </button>
+        </div>
+      </section>
+    </div>
+
 <div>
     <a href="{% url 'index' %} "><button > View your votenote</button> </a>
 </div>
@@ -21,23 +51,7 @@
     </ul>
 </div>
 
-<!-- Prop Info -->
-<div id="{{ proposition.number }}">
-    <h1>Proposition</h1>
-    <h2>{{ proposition.number }}</h2>
-    <h3>{{proposition.whatIs}}</h3>
-    <form action="{% url 'index' %}" method="POST">
-        {% csrf_token %} <!-- csrf token for basic security -->
-        <button class="noteAddYes" name="noteAddYes" type="submit">
-            <h3>YES</h3>
-            <p>{{proposition.yes}}</p>
-        </button>
-        <button class="noteAddNo" name="noteAddNo" type="submit">
-            <h3>NO</h3>
-            <p>{{proposition.no}}</p>
-        </button>
-    </form>
-</div>
+
 
 
 
