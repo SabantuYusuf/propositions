@@ -309,15 +309,11 @@ line-height: 40px;
 }
 
 
-.section-content {
-  color: white;
-  z-index: 999;
-}
 
 .section-content-flex {
   display: flex;
   flex-direction: column;
-  margin-top: 300px;
+  margin-top: 200px;
   text-emphasis: bold;
   justify-content: center;
   align-items: center;
@@ -325,13 +321,20 @@ line-height: 40px;
   justify-self: center;
   justify-items: center;
   z-index: 999;
+}
+.section-content {
+  color: white;
+  z-index: 999;
+}
 
-
-
-/* Sabantu */
 .sidebar-text {
   text-decoration: none;
-  background: #efefef;
+  /* color: white */
+}
+span {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px
 }
 
 li {
@@ -346,7 +349,6 @@ ul {
 
 a {
   text-decoration: none;
-
 }
 
 .radio {
@@ -355,4 +357,14 @@ a {
   left: 50px;
   opacity: 0;
   width: 300px;
+}
+
+.yellow-text {
+  color:#ed9e01;
+}
+
+
+.move-me {
+  position: absolute;
+  top: 75px;
 }

@@ -10,22 +10,33 @@
         <img src="../static/images/US-Map.png" alt="Site Logo" class="background-map"> 
     </body>
     
-    {% for proposition in propositions %}
-        <div class="section-content-flex">
+    <div class="section-content-flex">
+        {% for proposition in propositions %}
             
             {% if proposition.yes_count > proposition.no_count %}
-                <h4 class="section-content">YES {{ proposition.number }}  {{ proposition.whatIs }}</h4>
+                 <div class="section-content"> 
+                    <p class="yellow-text" style="margin: 0; display: inline;">YES</p>
+                    <p style="margin: 0; display: inline;">PROP {{ proposition.number }}  {{ proposition.whatIs }}</p>
+                </div>
             {% elif  proposition.no_count > proposition.yes_count%}
-                <h4 class="section-content"> NO {{ proposition.number }}  {{ proposition.whatIs }}</h4>
+                <div class="section-content"> 
+                    <p class="yellow-text" style="margin: 0; display: inline;">NO</p>
+                    <p style="margin: 0; display: inline;">PROP {{ proposition.number }}  {{ proposition.whatIs }}</p>
+                </div>
             {%else %}
-                <h4 class="section-content"> I'M NOT SURE {{ proposition.number }}  {{ proposition.whatIs }}</h4>
+                <div class="section-content"> 
+                    <p class="yellow-text" style="margin: 0; display: inline;">I'M NOT SURE</p>
+                    <p style="margin: 0; display: inline;">PROP {{ proposition.number }}  {{ proposition.whatIs }}</p>
+                </div>
             {% endif %}
-        
-
-            <p>DELETE LATE {{ proposition.number }} :: YES COUNT: {{ proposition.yes_count }} || NO COUNT: {{ proposition.no_count }}</p>
-            <button type="submit" class="confirm" > looks good! </button>
-        </div>
-    {% endfor %}
+            <br>
+        {% endfor %}
+    </div>
 </div>
+
+<div class="move-me">
+    <button type="submit" class="confirm" > looks good! </button>
+<div>
+
 
 {% endblock %}
