@@ -5,9 +5,13 @@
 
 <h1>Here's your votenotes</h1>
 <div class="section-content">
-    <h4>{{ proposition.number }}</h4>
-    <h4>{{ proposition.whatIs }}</h4>
-    <h4>{{ proposition.answer }}</h4>
+
+    {% for proposition in propositions %}
+        <div>
+            {% comment %} <h4>{{ user.answer }}</h4> {% endcomment %}
+            <h4>{{ proposition.number }}  {{ proposition.whatIs }}</h4>
+        </div>
+    {% endfor %}
 </div>
 
 {% endblock %}
