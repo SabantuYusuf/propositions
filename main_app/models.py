@@ -1,3 +1,4 @@
+from colorfield.fields import ColorField
 from django.db import models
 
 # Create your models here.
@@ -11,6 +12,8 @@ class Proposition(models.Model):
 
     yes_count = models.IntegerField(default=0)
     no_count = models.IntegerField(default=0)
+
+    color = ColorField(default='#FF0000')
 
     def __str__(self):
         return self.number
