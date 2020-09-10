@@ -1,7 +1,7 @@
 {% extends 'base.html' %}
+{% load static %}
 
 {% block content %}
-{% load static %}
 
 <img src="../static/images/Logo.png" alt="Miniature Site Logo" class="mini-vote-logo">
 <img src="../static/images/Flag_of_California.png" alt="California Republic Flag" class="cal-flag">
@@ -15,23 +15,39 @@
              <div class="magic-prop-num">{{ proposition.number }}</div>
                 <span class="prop-info"> {{proposition.whatIs}} </span>
       </section>
+
       <section class="bottom-section">
         <div id="{{ proposition.number }}">
-         <!--   
-             Commented out for later use        
-            <h1>Proposition</h1>
-            <h2>{{ proposition.number }}</h2> 
-            <h3>{{proposition.whatIs}}</h3>   --> 
-            <button class="yes-button">
-                <h3>YES</h3>
-                <p class="prop-yes">{{proposition.yes}}</p>
-            </button>
-            <button class="no-button">
-                <h3>NO</h3>
-                <p class="prop-no">{{proposition.no}}</p>
-            </button>
+
+            <form method='POST'>
+                {% csrf_token %}
+
+                <div class="yes-button">
+                    <h3>YES</h3>
+                    <p class="prop-yes">
+                        <label>
+                            <input type="radio" name="proposition" value="yes" class="prop-yes">
+                            {{proposition.yes}}
+                        </label>
+                    </p>
+                </div>
+
+                <div class="no-button">
+                    <h3>NO</h3>
+                    <p lass="prop-no">
+                        <label>
+                            <input type="radio" name="proposition" value="no" class="prop-no">
+                            {{proposition.no}}
+                        </label>
+                    </p>
+                </div>
+
+                <button type="submit">Submit</button>
+            
+            </form> 
+
         </div>
-      </section>
+      </section> 
     </div>
 
 <div>
@@ -52,8 +68,54 @@
 </div>
 
 
+<!-- Prop Info -->
+{% comment %} <div id="{{ proposition.number }}">
+    <h1>Proposition</h1>
+    <h2>{{ proposition.number }}</h2>
+    <h3>{{proposition.whatIs}}</h3>
+
+    <form method='POST'>
+        {% csrf_token %}
+
+        <div>
+            <h3>YES</h3>
+            <label>
+                <input type="radio" name="proposition" value="yes">
+                {{proposition.yes}}  
+            </label>
+        </div>
+
+        <div>
+            <h3>NO</h3>
+            <label>
+                <input type="radio" name="proposition" value="no">
+                {{proposition.no}}
+            </label>
+        </div>
+
+        <button type="submit">Submit</button>
+    
+    </form>
+
+</div> {% endcomment %}
 
 
+
+
+
+<script>
+    const yesButton = document.querySelector(".yes-button");
+    const noButton = document.querySelector(".no-button");
+
+    yesButton.addEventListener("click", () => {
+        console.log("clicked the yes button!!!");
+    });
+
+    noButton.addEventListener("click", () => {
+        console.log("clicked the no button!!!");
+    });
+
+</script>
 
 
 {% endblock %}

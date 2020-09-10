@@ -1,7 +1,7 @@
 from django.shortcuts import render, redirect
 from .models import Proposition
 # Add the following import
-from django.http import HttpResponse
+from django.http import HttpResponse, HttpResponseRedirect
 
 # Define the home view
 def home(request):
@@ -15,6 +15,7 @@ def start(request):
 
 def index(request):
     propositions = Proposition.objects.all().order_by('number')
+
     context = {
         'propositions': propositions
     }
@@ -24,19 +25,21 @@ def index(request):
 def show(request, proposition_id):
     side_bar_proposition_numbers = Proposition.objects.all().order_by('number')
     proposition = Proposition.objects.get(id=proposition_id)
-    if request.method == "POST":
-        if "noteAddYes" in request.POST: #checking if there is a request to add a vote note
-            print: 'yes'
-            # # title = request.POST["description"] #title
-			# VoteNote = VoteNote(number=number)
-			# VoteNote.save() #saving the todo 
-			# return redirect("/") #reloading the page
+    
+    if request.method == 'POST':
+        print(request.POST['proposition'])
+        selected_option = request.POST['proposition']
+        if selected_option == 'yes':
+            proposition.yes_count += 1
+        elif selected_option == 'no':
+            proposition.no_count += 1
         else:
-            print: 'no'
-            # # title = request.POST["description"] #title
-			# VoteNote = VoteNote(number=number)
-			# VoteNote.save() #saving the todo 
-			# return redirect("/") #reloading the page
+            return HttpResponse(400, 'Invalid Form') 
+        
+        proposition.save()
+
+        # return redirect('index')
+        return HttpResponseRedirect(request.path_info)
 
     context = {
         'proposition': proposition,
