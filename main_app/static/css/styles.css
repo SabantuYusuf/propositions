@@ -1,0 +1,130 @@
+
+:root {
+  background: #0f263a;
+}
+
+.background-map{
+position: absolute;
+width: 1191.49px;
+height: 795px;
+left: 124.11px;
+top: 163px;
+
+}
+.vote-logo { 
+
+    position: absolute;
+    width: 159.51px;
+    height: 123.1px;
+    left: 634.49px;
+    top: 154.12px;
+    
+
+
+}
+
+.intro-text {
+    position: absolute;
+width: 782px;
+height: 95px;
+left: 329px;
+top: 375px;
+
+font-family: Questrial;
+font-style: normal;
+font-weight: normal;
+font-size: 30px;
+line-height: 40px;
+/* or 133% */
+
+text-align: center;
+
+color: #FFFFFF;
+
+}
+
+/* "Zip Code" Text*/
+.page-text1 {
+  position: absolute;
+  width: 290px;
+  height: 31px;
+  left: 415px;
+  top: 556px;
+
+  font-family: Questrial;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 20px;
+  line-height: 31px;
+  /* identical to box height, or 155% */
+
+  display: flex;
+  align-items: center;
+  text-align: center;
+
+  color: #ffffff;
+}
+
+/* "Language" Text*/
+.page-text2 {
+  position: absolute;
+  width: 286px;
+  height: 31px;
+  left: 740px;
+  top: 556px;
+
+  font-family: Questrial;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 20px;
+  line-height: 31px;
+  /* identical to box height, or 155% */
+
+  display: flex;
+  align-items: center;
+  text-align: center;
+
+  color: #ffffff;
+
+}
+/* Zip Input Field */
+.zip {
+    position: absolute;
+    width: 290px;
+    height: 62px;
+    left: 415px;
+    top: 596px;
+    
+
+  background: #ffffff;
+  border: 1.82388px solid #6b6b6b;
+  box-sizing: border-box;
+  border-radius: 10.9433px;
+}
+
+/* Language Input Field */
+.language {
+    position: absolute;
+    width: 286px;
+    height: 62px;
+    left: 740px;
+    top: 596px;
+    
+  background: #ffffff;
+  border: 1.82388px solid #6b6b6b;
+  box-sizing: border-box;
+  border-radius: 10.9433px;
+}
+
+.start {
+  
+position: absolute;
+width: 400px;
+height: 60px;
+left: 520px;
+top: 735px;
+
+
+  background: #ed9e01;
+  border-radius: 77.716px;
+}
