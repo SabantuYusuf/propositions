@@ -22,6 +22,8 @@ def index(request):
     return render(request, 'index.html', context)
 
 
+
+
 def show(request, proposition_id):
     side_bar_proposition_numbers = Proposition.objects.all().order_by('number')
     proposition = Proposition.objects.get(id=proposition_id)
@@ -31,8 +33,12 @@ def show(request, proposition_id):
         selected_option = request.POST['proposition']
         if selected_option == 'yes':
             proposition.yes_count += 1
+            proposition.color = '#FFFF00'
+            # print(proposition.color)
         elif selected_option == 'no':
             proposition.no_count += 1
+            proposition.color = '#FFFF00'
+            # print(proposition.color)
         else:
             return HttpResponse(400, 'Invalid Form') 
         
@@ -46,4 +52,3 @@ def show(request, proposition_id):
         'side_bar_proposition_numbers': side_bar_proposition_numbers,
     }
     return render(request, 'show.html', context)
-
