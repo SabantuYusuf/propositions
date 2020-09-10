@@ -46,9 +46,11 @@
     <ul class="sidebar-ul">
     <!-- CITY NAMES -->
     {% for proposition in side_bar_proposition_numbers.all %}  
-        <a href={% url 'show' proposition.id %}>
+        <a href={% url 'show' proposition.id %} style=color:{{ proposition.color }};>
             <li class="sidebar-item">
-                <span class="sidebar-text">{{proposition.number}}</span>
+                <!-- <span class="sidebar-text" onClick="this.style.backgroundColor ='#000'; this.style.color = '#FFF';" >{{proposition.number}}</span> -->
+                <!-- <span class="sidebar-text" style=“color:{{ proposition.color }};" onClick="this.style.backgroundColor ='#000'; this.style.color = '#FFF';" >{{proposition.number}}</span> -->
+                <span class="sidebar-text" >{{proposition.number}} </span>
             </li>
         </a>
     {% endfor %}

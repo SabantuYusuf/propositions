@@ -275,3 +275,25 @@ box-shadow: 8px 8px 12px rgba(12, 36, 56, 0.25);
 border-radius: 20px;
 color: black;   
 }
+
+
+
+/* Sabantu */
+.sidebar-text {
+  text-decoration: none;
+  background: #efefef;
+}
+
+li {
+  text-decoration: none;
+  list-style-type: none;
+}
+
+ul {
+  text-decoration: none;
+  list-style-type: none;
+}
+
+a {
+  text-decoration: none; !important
+}
