@@ -28,7 +28,9 @@ def show(request, proposition_id):
     
     if request.method == 'POST':
         print(request.POST['proposition'])
-        selected_option = request.POST['proposition']
+
+        # selected_option = request.POST['proposition']
+        selected_option = request.POST.get('proposition', False);
         if selected_option == 'yes':
             proposition.yes_count += 1
         elif selected_option == 'no':
@@ -38,8 +40,8 @@ def show(request, proposition_id):
         
         proposition.save()
 
-        # return redirect('index')
-        return HttpResponseRedirect(request.path_info)
+        return redirect('index')
+        # return HttpResponseRedirect(request.path_info)
 
     context = {
         'proposition': proposition,
