@@ -38,8 +38,8 @@ def show(request, proposition_id):
         
         proposition.save()
 
-        # return redirect('index')
-        return HttpResponseRedirect(request.path_info)
+        return redirect('index')
+        #return HttpResponseRedirect(request.path_info)
 
     context = {
         'proposition': proposition,

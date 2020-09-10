@@ -118,6 +118,11 @@ main {
 
   background: #ed9e01;
   border-radius: 77.716px;
+font-family: Questrial;
+font-style: normal;
+font-weight: normal;
+font-size: 30px;
+line-height: 40px;
 }
 
 /* mini vote logo on show page "/propositions/1" */
@@ -275,3 +280,61 @@ box-shadow: 8px 8px 12px rgba(12, 36, 56, 0.25);
 border-radius: 20px;
 color: black;   
 }
+
+.section-content-text {
+color: #ED9E01;
+position: absolute;
+width: 624px;
+height: 95px;
+left: 530px;
+top: 92px;
+
+}
+
+.confirm {
+  position: absolute;
+  width: 400px;
+  height: 60px;
+  left: 520px;
+  top: 735px;
+
+background: #ed9e01;
+border-radius: 77.716px;
+font-family: Questrial;
+font-style: normal;
+font-weight: normal;
+font-size: 30px;
+line-height: 40px;
+}
+
+
+.section-content {
+  color: white;
+  z-index: 999;
+}
+
+.section-content-flex {
+  display: flex;
+  flex-direction: column;
+  margin-top: 300px;
+  text-emphasis: bold;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+  justify-self: center;
+  justify-items: center;
+  z-index: 999;
+}
+
+.radio {
+  position: relative;
+  top: -75px;
+  left: 50px;
+  opacity: 0;
+  width: 300px;
+}
+
+
+
+
+
