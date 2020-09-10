@@ -22,15 +22,17 @@
     <h1>Proposition</h1>
     <h2>{{ proposition.number }}</h2>
     <h3>{{proposition.whatIs}}</h3>
-    <button>
-        <h3>YES</h3>
-        <p>{{proposition.yes}}</p>
-    </button>
-    <button>
-        <h3>NO</h3>
-        <p>{{proposition.no}}</p>
-    </button>
-
+    <form action="" method="POST">
+        {% csrf_token %} <!-- csrf token for basic security -->
+        <button class="noteAddYes" name="noteAddYes" type="submit">
+            <h3>YES</h3>
+            <p>{{proposition.yes}}</p>
+        </button>
+        <button class="noteAddNo" name="noteAddNo" type="submit">
+            <h3>NO</h3>
+            <p>{{proposition.no}}</p>
+        </button>
+    </form>
 </div>
 
 

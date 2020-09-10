@@ -21,7 +21,20 @@ def index(request):
 def show(request, proposition_id):
     side_bar_proposition_numbers = Proposition.objects.all().order_by('number')
     proposition = Proposition.objects.get(id=proposition_id)
-    
+    if request.method == "POST":
+        if "noteAddYes" in request.POST: #checking if there is a request to add a vote note
+            print: 'yes'
+            # # title = request.POST["description"] #title
+			# VoteNote = VoteNote(number=number)
+			# VoteNote.save() #saving the todo 
+			# return redirect("/") #reloading the page
+        else:
+            print: 'no'
+            # # title = request.POST["description"] #title
+			# VoteNote = VoteNote(number=number)
+			# VoteNote.save() #saving the todo 
+			# return redirect("/") #reloading the page
+
     context = {
         'proposition': proposition,
         'side_bar_proposition_numbers': side_bar_proposition_numbers,
