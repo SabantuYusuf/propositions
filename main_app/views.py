@@ -22,15 +22,15 @@ def index(request):
     return render(request, 'index.html', context)
 
 
-
-
 def show(request, proposition_id):
     side_bar_proposition_numbers = Proposition.objects.all().order_by('number')
     proposition = Proposition.objects.get(id=proposition_id)
     
     if request.method == 'POST':
+
         print(request.POST['proposition'])
-        selected_option = request.POST['proposition']
+        selected_option = request.POST.get('proposition', False);
+
         if selected_option == 'yes':
             proposition.yes_count += 1
             proposition.color = '#FFFF00'

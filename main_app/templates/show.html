@@ -19,87 +19,41 @@
       <section class="bottom-section">
         <div id="{{ proposition.number }}">
 
-            <form method='POST'>
+            <form id="form" method='POST'>
                 {% csrf_token %}
 
                 <div class="yes-button">
                     <h3>YES</h3>
-                    <p class="prop-yes">
-                        <label>
-                            <input type="radio" name="proposition" value="yes" class="prop-yes">
-                            {{proposition.yes}}
-                        </label>
-                    </p>
+                    {{proposition.yes}}
+                    <input type="radio" name="proposition" value="yes" class="prop-yes yes-button radio">
                 </div>
 
                 <div class="no-button">
                     <h3>NO</h3>
-                    <p lass="prop-no">
-                        <label>
-                            <input type="radio" name="proposition" value="no" class="prop-no">
-                            {{proposition.no}}
-                        </label>
-                    </p>
+                    {{proposition.no}}
+                    <input type="radio" name="proposition" value="no" class="prop-no yes-button radio">
                 </div>
-
-                <button type="submit">Submit</button>
-            
             </form> 
-
         </div>
       </section> 
     </div>
 
 <div>
-    <a href="{% url 'index' %} "><button > View your votenote</button> </a>
+    <a href="{% url 'index' %}"><button> View your votenote</button></a>
 </div>
+
 <!-- SIDEBAR -->
 <div class="sidebar-container">
     <ul class="sidebar-ul">
-    <!-- CITY NAMES -->
     {% for proposition in side_bar_proposition_numbers.all %}  
         <a href={% url 'show' proposition.id %} style=color:{{ proposition.color }};>
             <li class="sidebar-item">
-                <!-- <span class="sidebar-text" onClick="this.style.backgroundColor ='#000'; this.style.color = '#FFF';" >{{proposition.number}}</span> -->
-                <!-- <span class="sidebar-text" style=“color:{{ proposition.color }};" onClick="this.style.backgroundColor ='#000'; this.style.color = '#FFF';" >{{proposition.number}}</span> -->
-                <span class="sidebar-text" >{{proposition.number}} </span>
+                <span class="sidebar-text">{{proposition.number}} </span>
             </li>
         </a>
     {% endfor %}
     </ul>
 </div>
-
-
-<!-- Prop Info -->
-{% comment %} <div id="{{ proposition.number }}">
-    <h1>Proposition</h1>
-    <h2>{{ proposition.number }}</h2>
-    <h3>{{proposition.whatIs}}</h3>
-
-    <form method='POST'>
-        {% csrf_token %}
-
-        <div>
-            <h3>YES</h3>
-            <label>
-                <input type="radio" name="proposition" value="yes">
-                {{proposition.yes}}  
-            </label>
-        </div>
-
-        <div>
-            <h3>NO</h3>
-            <label>
-                <input type="radio" name="proposition" value="no">
-                {{proposition.no}}
-            </label>
-        </div>
-
-        <button type="submit">Submit</button>
-    
-    </form>
-
-</div> {% endcomment %}
 
 
 
@@ -108,13 +62,18 @@
 <script>
     const yesButton = document.querySelector(".yes-button");
     const noButton = document.querySelector(".no-button");
+    const form = document.querySelector("#form");
+    const input = document.querySelector(".prop-yes");
+
 
     yesButton.addEventListener("click", () => {
         console.log("clicked the yes button!!!");
+        form.submit();
     });
 
     noButton.addEventListener("click", () => {
         console.log("clicked the no button!!!");
+        form.submit();
     });
 
 </script>
