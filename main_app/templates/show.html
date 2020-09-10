@@ -1,7 +1,7 @@
 {% extends 'base.html' %}
+{% load static %}
 
 {% block content %}
-{% load static %}
 
 <h1>Proposition X (Show)</h1>
 <div>
@@ -26,19 +26,51 @@
     <h1>Proposition</h1>
     <h2>{{ proposition.number }}</h2>
     <h3>{{proposition.whatIs}}</h3>
-    <form action="{% url 'index' %}" method="POST">
-        {% csrf_token %} <!-- csrf token for basic security -->
-        <button class="noteAddYes" name="noteAddYes" type="submit">
+
+    <form method='POST'>
+        {% csrf_token %}
+
+        <div>
             <h3>YES</h3>
-            <p>{{proposition.yes}}</p>
-        </button>
-        <button class="noteAddNo" name="noteAddNo" type="submit">
+            <label>
+                <input type="radio" name="proposition" value="yes">
+                {{proposition.yes}}  
+            </label>
+        </div>
+
+        <div>
             <h3>NO</h3>
-            <p>{{proposition.no}}</p>
-        </button>
+            <label>
+                <input type="radio" name="proposition" value="no">
+                {{proposition.no}}
+            </label>
+        </div>
+
+        <button type="submit">Submit</button>
+    
     </form>
+
 </div>
 
+
+
+
+
+
+
+<script>
+    const yesButton = document.querySelector(".yesButton");
+    const noButton = document.querySelector(".noButton");
+
+    yesButton.addEventListener("click", () => {
+        console.log("clicked the yes button!!!");
+    });
+
+    noButton.addEventListener("click", () => {
+        console.log("clicked the no button!!!");
+    });
+
+</script>
 
 
 

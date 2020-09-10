@@ -8,8 +8,17 @@
 
     {% for proposition in propositions %}
         <div>
-            {% comment %} <h4>{{ user.answer }}</h4> {% endcomment %}
-            <h4>{{ proposition.number }}  {{ proposition.whatIs }}</h4>
+            
+            {% if proposition.yes_count > proposition.no_count %}
+                <h4>YES {{ proposition.number }}  {{ proposition.whatIs }}</h4>
+            {% elif  proposition.no_count > proposition.yes_count%}
+                <h4>NO {{ proposition.number }}  {{ proposition.whatIs }}</h4>
+            {%else %}
+                <h4>I'M NOT SURE {{ proposition.number }}  {{ proposition.whatIs }}</h4>
+            {% endif %}
+        
+            <p>{{ proposition.number }} :: YES COUNT: {{ proposition.yes_count }} || NO COUNT: {{ proposition.no_count }}</p>
+            
         </div>
     {% endfor %}
 </div>
