@@ -27,6 +27,13 @@
   line-height: 40px;
 }
 
+.votenote-link:hover {
+  background-color: #cf8c05;
+  color: black;
+	text-decoration: none;
+	box-shadow: 1px 1px 1px black;
+
+}
 .shadows {
 	box-shadow: 1px 2px 1px black;
 }
@@ -149,6 +156,13 @@ font-size: 30px;
 line-height: 40px;
 }
 
+.start:hover {
+  background-color: #cf8c05;
+  color: black;
+	text-decoration: none;
+	box-shadow: 1px 1px 1px black;
+
+}
 /* mini vote logo on show page "/propositions/1" */
 
 .mini-vote-logo {
@@ -332,7 +346,13 @@ font-size: 30px;
 line-height: 40px;
 }
 
+.confirm:hover {
+  background-color: #cf8c05;
+  color: black;
+	text-decoration: none;
+	box-shadow: 1px 1px 1px black;
 
+}
 
 .section-content-flex {
   display: flex;
