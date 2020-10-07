@@ -9,38 +9,32 @@
        <h3>California General Election Tuesday, November 3, 2020 7 AM to 8 PM PST </h3> 
     </div>
 
-    <div class="props-container">
-      <section class="top-section">
-        <h5 class="prop-text">Proposition</h5>
-             <div class="magic-prop-num">{{ proposition.number }}</div>
-                <span class="prop-info"> {{proposition.whatIs}} </span>
-      </section>
-
-      <section class="bottom-section">
-        <div id="{{ proposition.number }}">
-
-            <form id="form" method='POST'>
-                {% csrf_token %}
-
-                <div class="yes-button">
-                    <h3>YES</h3>
-                    {{proposition.yes}}
-                    <input type="radio" name="proposition" value="yes" class="prop-yes yes-button radio">
-                </div>
-
-                <div class="no-button">
-                    <h3>NO</h3>
-                    {{proposition.no}}
-                    <input type="radio" name="proposition" value="no" class="prop-no yes-button radio">
-                </div>
-            </form> 
+    <section class="props-container">
+        <div class="top-section">
+            <h5 class="prop-text">Proposition</h5>
+            <div class="magic-prop-num">{{ proposition.number }}</div>
+            <span class="prop-info"> {{proposition.whatIs}} </span>
         </div>
-      </section> 
-    </div>
-
-<div>
-    <a href="{% url 'index' %}"><button> View your votenote</button></a>
-</div>
+                    
+        <form id="form" method='POST'>
+            {% csrf_token %}
+            <div class="yes-button">
+                <h3>YES</h3>
+                {{proposition.yes}}
+                <input type="radio" name="proposition" value="yes" class="prop-yes yes-button radio">
+            </div>
+            
+            <div class="no-button">
+                <h3>NO</h3>
+                {{proposition.no}}
+                <input type="radio" name="proposition" value="no" class="prop-no yes-button radio">
+            </div>
+            
+        </form> 
+        <div>
+            <a class="votenote-link" href="{% url 'index' %}">View your votenote</a>
+        </div>
+    </section> 
 
 <!-- SIDEBAR -->
 <div class="sidebar-container">
