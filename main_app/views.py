@@ -15,7 +15,6 @@ def start(request):
 
 def index(request):
     propositions = Proposition.objects.all().order_by('number')
-
     context = {
         'propositions': propositions
     }
